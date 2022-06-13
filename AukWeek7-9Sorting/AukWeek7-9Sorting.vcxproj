@@ -55,6 +55,7 @@
     <ProjectGuid>{051c5b5d-ca24-4fb2-9862-fafeab0602f9}</ProjectGuid>
     <RootNamespace>AukWeek7Sorting</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>AukWeek7-9Sorting</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

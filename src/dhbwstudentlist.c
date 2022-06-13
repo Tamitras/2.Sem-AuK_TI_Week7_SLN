@@ -11,57 +11,54 @@
 #include "dhbwstudentlist.h"
 #include "dhbwstudent.h"
 
- // DIESE METHODEN NICHT AENDERN
 
-StudentLP StudentLPAlloc(Student_p newStudent)
-{
-	StudentLP new = malloc(sizeof(StudentL));
+ //DIESE METHODEN NICHT AENDERN
 
-	new->student = newStudent;
-	new->next = NULL;
+StudentLP StudentLPAlloc(Student_p newStudent) {
 
-	return new;
+	StudentLP newStudentLP = malloc(sizeof(StudentL));
+
+	newStudentLP->student = newStudent;
+	newStudentLP->next = NULL;
+
+	return newStudentLP;
 }
 
-void StudentLInsertFirst(StudentLP* anchor_adr, Student_p newStudent)
-{
+void StudentLInsertFirst(StudentLP* anchor_adr, Student_p newStudent) {
 	StudentLP oldFirst = *anchor_adr;
 	StudentLP newFirst = StudentLPAlloc(newStudent);
 	*anchor_adr = newFirst;
 	newFirst->next = oldFirst;
 }
 
-void StudentLInsertLast(StudentLP* anchor_adr, Student_p newStudent)
-{
+void StudentLInsertLast(StudentLP* anchor_adr, Student_p newStudent) {
+
 	StudentLP current = *anchor_adr;
 	StudentLP previous = NULL;
 
 	StudentLP newLP = StudentLPAlloc(newStudent);
 
-	while (current != NULL)
-	{
+	while (current != NULL) {
 		previous = current;
 		current = current->next;
 	}
 
-	if (previous != NULL)
-	{
+	if (previous != NULL) {
 		previous->next = newLP;
 	}
-	else
-	{
+	else {
 		*anchor_adr = newLP;
 	}
+
 }
 
-int StudentLSize(StudentLP* anchor_adr)
-{
+int StudentLSize(StudentLP* anchor_adr) {
+
 	StudentLP current = *anchor_adr;
 
 	int size = 0;
 
-	while (current != NULL)
-	{
+	while (current != NULL) {
 		size++;
 		current = current->next;
 	}
@@ -69,8 +66,7 @@ int StudentLSize(StudentLP* anchor_adr)
 	return size;
 }
 
-void StudentLPFree(StudentLP info)
-{
+void StudentLPFree(StudentLP info) {
 	if (info == NULL)
 		return;
 
@@ -79,17 +75,11 @@ void StudentLPFree(StudentLP info)
 	return;
 }
 
-void StudentLFree(StudentLP* anchor_adr)
-{
-	if (anchor_adr == NULL)
-	{
-		return;
-	}
+void StudentLFree(StudentLP* anchor_adr) {
 
 	StudentLP current = *anchor_adr;
 
-	while (current)
-	{
+	while (current) {
 		StudentLP newCurrent = current->next;
 		StudentLPFree(current);
 		current = newCurrent;
@@ -99,8 +89,7 @@ void StudentLFree(StudentLP* anchor_adr)
 	return;
 }
 
-StudentLP deepLPCopy(StudentLP info)
-{
+StudentLP deepLPCopy(StudentLP info) {
 	if (info == NULL)
 		return NULL;
 	StudentLP copy = StudentLPAlloc(deepCopy(info->student));
@@ -108,8 +97,7 @@ StudentLP deepLPCopy(StudentLP info)
 	return copy;
 }
 
-StudentLP* deepLCopy(StudentLP* anchor_adr)
-{
+StudentLP* deepLCopy(StudentLP* anchor_adr) {
 	if (anchor_adr == NULL)
 		return NULL;
 
@@ -118,8 +106,7 @@ StudentLP* deepLCopy(StudentLP* anchor_adr)
 
 	StudentLP current = *anchor_adr;
 
-	while (current)
-	{
+	while (current) {
 		StudentLInsertLast(copy, deepCopy(current->student));
 		current = current->next;
 	}
@@ -127,8 +114,8 @@ StudentLP* deepLCopy(StudentLP* anchor_adr)
 	return copy;
 }
 
-StudentLP* StudentsFromFile(char* filename)
-{
+StudentLP* StudentsFromFile(char* filename) {
+
 	FILE* in = fopen(filename, "r");
 
 	char string[BUF_SIZE];
@@ -137,20 +124,19 @@ StudentLP* StudentsFromFile(char* filename)
 	StudentLP reverse_students_anchor = NULL;
 	StudentLP* reverse_students = &reverse_students_anchor;
 
-	while (fgets(string, BUF_SIZE, in))
-	{
-		// remove newline (works for both windows and unix)
+	while (fgets(string, BUF_SIZE, in)) {
+
+		//remove newline (works for both windows and unix)
 		string[strcspn(string, "\r\n")] = 0;
 
-		// printf("%s\n", string);
+		//printf("%s\n", string);
 		StudentLInsertFirst(reverse_students, StudentAlloc(string));
 	}
 
-	// create normal ordered list
+	//create normal ordered list
 	{
 		StudentLP current = *reverse_students;
-		while (current != NULL)
-		{
+		while (current != NULL) {
 			StudentLInsertFirst(all_students, deepCopy(current->student));
 			current = current->next;
 		}
@@ -161,7 +147,46 @@ StudentLP* StudentsFromFile(char* filename)
 	return all_students;
 }
 
-// Bis hier nicht �ndern
+StudentLP* ArrayToStudentL(Student_p* array, int count, bool doDeepCopy) {
+
+	StudentLP* list = malloc(sizeof(StudentLP));
+	*list = NULL;
+
+	for (int i = count - 1; i >= 0; i--) {
+		if (doDeepCopy) {
+			StudentLInsertFirst(list, deepCopy(array[i]));
+		}
+		else {
+			StudentLInsertFirst(list, array[i]);
+		}
+	}
+	return list;
+}
+
+Student_p* StudentLToArray(StudentLP* anchor_adr, int* outcount, bool doDeepCopy) {
+
+	*outcount = StudentLSize(anchor_adr);
+
+	Student_p* array = calloc(*outcount, sizeof(Student_p));
+
+	StudentLP current = *anchor_adr;
+	int i = 0;
+	while (current != NULL) {
+		if (doDeepCopy) {
+			array[i] = deepCopy(current->student);
+		}
+		else {
+			array[i] = current->student;
+		}
+		current = current->next;
+		i++;
+	}
+
+	return array;
+}
+
+//Bis hier nicht aendern
+
 
 // Ab hier Aufgaben
 

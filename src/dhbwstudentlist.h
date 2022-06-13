@@ -52,7 +52,7 @@ StudentLP* StudentsFromFile(char *filename);
 //wandelt ein Array in eine Liste um
 StudentLP* ArrayToStudentL(Student_p *array, int count, bool doDeepCopy);
 //wandelt eine Liste in ein Array um
-Student_p *StudentLToArray(StudentLP *anchor_adr, int *outcount, bool doDeepCopy);
+Student_p *	StudentLToArray(StudentLP *anchor_adr, int *outcount, bool doDeepCopy);
 
 //Aufgaben ab hier
 

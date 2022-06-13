@@ -16,7 +16,7 @@
 
 //Auf true setzen, damit Heapsort getestet wird
 bool HeapSortImplemented() {
-	return false;
+	return true;
 }
 
 //Hilfsfunktionen

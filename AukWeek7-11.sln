@@ -5,11 +5,11 @@ VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek7DataStruc", "AukWeek7DataStruc\AukWeek7DataStruc.vcxproj", "{98866189-4C49-4EA0-A9CF-F92BC90BB675}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek7Graph", "AukWeek7Graph\AukWeek7Graph.vcxproj", "{DC0002ED-58BA-4FC2-9FD5-4109633842E1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek10Graph", "AukWeek10Graph\AukWeek10Graph.vcxproj", "{DC0002ED-58BA-4FC2-9FD5-4109633842E1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek7Sorting", "AukWeek7Sorting\AukWeek7Sorting.vcxproj", "{051C5B5D-CA24-4FB2-9862-FAFEAB0602F9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek7-9Sorting", "AukWeek7-9Sorting\AukWeek7-9Sorting.vcxproj", "{051C5B5D-CA24-4FB2-9862-FAFEAB0602F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek7Maze", "AukWeek7Maze\AukWeek7Maze.vcxproj", "{46AD010D-3DEF-45E4-8133-E1390BCAF33F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AukWeek11Maze", "AukWeek11Maze\AukWeek11Maze.vcxproj", "{46AD010D-3DEF-45E4-8133-E1390BCAF33F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
