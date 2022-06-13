@@ -15,96 +15,87 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dhbwadjlist.h">
+    <ClInclude Include="..\src\dhbwstudentlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwgraphsolve.h">
+    <ClInclude Include="..\src\dhbwstudentmap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwmaze.h">
+    <ClInclude Include="..\src\dhbwstudenttree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwmazesolve.h">
+    <ClInclude Include="..\src\dhbwtest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwsortheap.h">
+    <ClInclude Include="..\src\dhbwadjlist.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwsortmerge.h">
+    <ClInclude Include="..\src\dhbwgraphsolve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwsortmisc.h">
+    <ClInclude Include="..\src\dhbwmaze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwsortsimple.h">
+    <ClInclude Include="..\src\dhbwmazesolve.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwstudent.h">
+    <ClInclude Include="..\src\dhbwsortheap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwstudentlist.h">
+    <ClInclude Include="..\src\dhbwsortmerge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwstudentmap.h">
+    <ClInclude Include="..\src\dhbwsortmisc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwstudenttree.h">
+    <ClInclude Include="..\src\dhbwsortsimple.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="dhbwtest.h">
+    <ClInclude Include="..\src\dhbwstudent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="datastructures.c">
+    <ClCompile Include="..\src\datastructures.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwadjlist.c">
+    <ClCompile Include="..\src\dhbwadjlist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwgraphsolve.c">
+    <ClCompile Include="..\src\dhbwgraphsolve.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwmaze.c">
+    <ClCompile Include="..\src\dhbwmaze.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwmazesolve.c">
+    <ClCompile Include="..\src\dhbwmazesolve.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwsortheap.c">
+    <ClCompile Include="..\src\dhbwsortheap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwsortmerge.c">
+    <ClCompile Include="..\src\dhbwsortmerge.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwsortmisc.c">
+    <ClCompile Include="..\src\dhbwsortmisc.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwsortsimple.c">
+    <ClCompile Include="..\src\dhbwsortsimple.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwstudent.c">
+    <ClCompile Include="..\src\dhbwstudent.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwstudentlist.c">
+    <ClCompile Include="..\src\dhbwstudentmap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwstudentmap.c">
+    <ClCompile Include="..\src\dhbwstudenttree.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwstudenttree.c">
+    <ClCompile Include="..\src\dhbwtest.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dhbwtest.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="graphs.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="maze.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="sorting.c">
+    <ClCompile Include="..\src\dhbwstudentlist.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
