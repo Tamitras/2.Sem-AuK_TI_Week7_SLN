@@ -58,10 +58,6 @@ bool arraySortTest(const char *sortName, StudentLP *inputList, void (*SortArray)
 			outputStudentArray(inputArray, count);
 		}
 
-
-
-
-
 	return result;
 }
 
@@ -207,13 +203,9 @@ int main(int argc, char *argv[]) {
 
 	if(result && HeapSortImplemented()){
 		StudentLP *listForTest = deepLCopy(inputList);
-		result = arraySortTest(S_HEAPSORT, listForTest, MergeSortArray);
+		result = arraySortTest(S_HEAPSORT, listForTest, HeapSortArray);
 		StudentLFree(listForTest);
 	}
-
-
-
-
 
 	if (result) {
 		StudentLP *listForTest = deepLCopy(inputList);
