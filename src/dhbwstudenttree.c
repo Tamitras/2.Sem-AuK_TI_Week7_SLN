@@ -67,7 +67,7 @@ StudentTP deepTPCopy(StudentTP info)
 bool StudentTImplemented()
 {
 	// TODO: hier auf true aendern, damit Ihre Implementierung getestet wird
-	return true;
+	return false;
 }
 
 bool StudentTContainsStudent(StudentTP* root_adr, Student_p student)

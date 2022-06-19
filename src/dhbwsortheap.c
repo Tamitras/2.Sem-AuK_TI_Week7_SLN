@@ -11,92 +11,96 @@
 #include <stdlib.h>
 #include "dhbwsortheap.h"
 
-void heapify(Student_p* array, int count, int max);
+ //Ab hier Aufgaben
 
-
-//Ab hier Aufgaben
-
-//Auf true setzen, damit Heapsort getestet wird
+ //Auf true setzen, damit Heapsort getestet wird
 bool HeapSortImplemented()
 {
 	return true;
 }
 
 //Hilfsfunktionen
+void Swap1(Student_p* studA, Student_p* studB, int indexA, int indexB)
+{
+	//printf("\nTausche [%d] %s %d mit [%d]%s %d\n", indexB, (*studB)->lastname, (*studB)->matrnr, indexA, (*studA)->lastname, (*studA)->matrnr);
+	Student_p* temp = *studA;
+	*studA = *studB;
+	*studB = temp;
+}
+
 
 //Lasse kleinen Knoten nach unten sinken
 void HeapBubbleDown(Student_p* array, int nodeIndex, int end)
 {
+	// Initialize max as root
+	int max = end;
 
+	int leftChild = 2 * end + 1;
+	int rightChild = 2 * end + 2;
+
+	// if leftChild is bigger than parent
+	if (leftChild < nodeIndex && array[leftChild]->matrnr > array[max]->matrnr)
+	{
+		max = leftChild;
+	}
+
+	// If rightChild is bigger than parent
+	if (rightChild < nodeIndex && array[rightChild]->matrnr > array[max]->matrnr)
+	{
+		max = rightChild;
+	}
+
+	// If max is not root
+	if (max != end)
+	{
+		// swap last mit max
+		Swap1(&array[end], &array[max], end, max);
+
+		// Rekursiver Aufruf, um nach dem Vertauschen weiter zu prüfen.
+		HeapBubbleDown(array, nodeIndex, max);
+	}
+
+	return;
 }
+
 
 //Stellt Heap-Eigenschaft in einem Array (als Binaerbaum interpretiert) her
 void Heapify(Student_p* array, int count)
 {
-	// Prüfe ob kompletter Baum ge-heapyfied werden muss
-	Student_p* root = NULL;
-	int max = 0;
-
-	if (array[0] != NULL)
+	int offset = 1;
+	// Auf MaxHeap bringen (Kein Parent ist kleiner als eines seiner childs)
+	// Durchlaufe alle 3er Gruppen (Parent + LeftChild + RightChild) von unten nach oben und schiebe den größeren Knoten nach oben,
+	// bzw. tausche den Parent mit dem größten Child
+	for (int i = count / 2 - offset; i >= 0; i--)
 	{
-		root = array;
-		max = (*root)->matrnr; // Set root element as max
+		HeapBubbleDown(array, count, i);
 
-		for (int i = count / 2 - 1; i >= 0; i--)
-		{
-			int f = count / 2;
-			int t = f - 1;
+		//printf("\n------------------------\n");
 
-			heapify(array, count, i);
-		}
-	}
-}
+		//for (int f = 0; f < count; f++)
+		//{
+		//	printf("[%d] %s %d\n", f, array[f]->lastname, array[f]->matrnr);
+		//}
 
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-void heapify(Student_p* array, int count, int max)
-{
-	// Find largest among root, left child and right child
-
-	// Initialize largest as root
-	int largest = max;
-
-	// left = 2*i + 1
-	int left = 2 * max + 1;
-
-	// right = 2*i + 2
-	int right = 2 * max + 2;
-
-	// If left child is larger than root
-	if (left < count && array[left]->matrnr > array[largest]->matrnr)
-	{
-		largest = left;
+		//printf("\n------------------------\n");
 	}
 
-	// If right child is larger than largest 
-	  // so far
-	if (right < count && array[right]->matrnr > array[largest]->matrnr)
-	{
-		largest = right;
+	// Heap sort
+	for (int i = count - offset; i > 0; i--) {
+
+		// Tausche Root mit dem letzten element
+		Swap1(&array[0], &array[i], 0, i);
+
+		// Heapify ab der Wurzel
+		HeapBubbleDown(array, i, 0);
+
+		//printf("\n------------------------\n");
+		//for (int f = 0; f < count; f++)
+		//{
+		//	printf("[%d] %s %d\n", f, array[f]->lastname, array[f]->matrnr);
+		//}
+		//printf("\n------------------------\n");
 	}
-
-	// Swap and continue heapifying if root is not largest
-	// If largest is not root
-	if (largest != max) {
-
-		swap(&array[max], &array[largest]);
-
-		// Recursively heapify the affected 
-		// sub-tree
-		heapify(array, count, largest);
-	}
-
-	return;
 }
 
 
@@ -104,18 +108,17 @@ void heapify(Student_p* array, int count, int max)
 //Tipp: Hilfsfunktionen benutzen
 void HeapSortArray(Student_p* array, int count)
 {
-	for (int i = 0; i < count; i++)
-	{
-		printf("%s %d\n", array[i]->lastname, array[i]->matrnr);
-	}
+	//for (int f = 0; f < count; f++)
+	//{
+	//	printf("[%d] %s %d\n", f, array[f]->lastname, array[f]->matrnr);
+	//}
+
 	Heapify(array, count);
 
-	printf("\n------------------------\n");
+	//printf("\n------------------------\n");
 
-	for (int i = 0; i < count; i++)
-	{
-		printf("%s %d\n", array[i]->lastname, array[i]->matrnr);
-	}
+	//for (int f = 0; f < count; f++)
+	//{
+	//	printf("[%d] %s %d\n", f, array[f]->lastname, array[f]->matrnr);
+	//}
 }
-
-
