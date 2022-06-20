@@ -20,10 +20,11 @@ bool MergeSortArrayImplemented() {
 	return false;
 }
 //MergeSort mit Array
-void MergeSortArray(Student_p *array, int count) {
+void MergeSortArray(Student_p *array, int count)
+{
+
+
 }
-
-
 
 
 //Auf true setzen, damit Listen-MergeSort getestet wird
@@ -31,6 +32,9 @@ bool MergeSortListImplemented() {
 	return false;
 }
 //MergeSort mit Liste
-void MergeSortList(StudentLP *anchor_adr) {
+void MergeSortList(StudentLP *anchor_adr) 
+{
+
+
 }
 
