@@ -33,17 +33,12 @@ int main(int argc, char *argv[]) {
 	int amount = atoi(argv[1]);
 	printf("Amount=%d\n", amount);
 
-
-
-
-
 	AdjNodeP *inputGraph;
 	if (amount > 0) {
 		inputGraph = generateTestAdjList(amount);
 	} else {
 		inputGraph = AdjListFromFile(argv[1]);
 	}
-
 
 	printf("\n\n\nOriginal graph\n\n");
 	AdjListPrintGraphviz(inputGraph, false);

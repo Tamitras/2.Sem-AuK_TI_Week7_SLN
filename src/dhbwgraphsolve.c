@@ -1,9 +1,9 @@
 /*
  ============================================================================
  Aufgabe     : Datenstrukturen - Woche 10
- Autor       :
+ Autor       : Erik Kaufmann	
  Matrikel    :
- Version     :
+ Version     : 1.0
  ============================================================================
  */
 #include <stdbool.h>
@@ -14,13 +14,31 @@
 
 //Auf true setzen, damit Prim getestet wird
 bool primImplemented() {
-	return false;
+	return true;
 }
 
 //Berechnet den minimalen Spannbaum mittels Prim's Algorithmus
 //Ausgabe: Kanten und Knoten, die zum minimalen Spannbaum gehoeren, sind markiert (marked=true)
-void primMinimalSpanningTree(AdjNodeP *list) {
+void primMinimalSpanningTree(AdjNodeP *list)
+{
+	int length = 0;
+	AdjNodeP current = *list;
 
+	//// Länge ermitteln
+	//while (current)
+	//{
+	//	length++;
+	//	current = current->next;
+	//}
+
+	// Erste Node markiert
+	current->marked = true;
+
+	while (current)
+	{
+		// Prüfe die Wertigkeit der Kanten
+
+	}
 }
 
 //Auf true setzen, damit Dijkstra getestet wird
